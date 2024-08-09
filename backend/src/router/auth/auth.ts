@@ -22,7 +22,7 @@ authRouter.get('/google', passport.authenticate("google", {prompt : "consent"}))
 authRouter.get('/google/callback', passport.authenticate('google', {successRedirect : "http://localhost:5173", failureRedirect : "/api/auth/google"}));
 
 
-authRouter.get("/refresh", (req, res)=>{
+authRouter.get("/refresh", (req : any, res)=>{
   if(req.user===undefined){
     return res.redirect("/api/auth/google")
   }
