@@ -26,7 +26,7 @@ const upload = multer();
 
 
 
-dataRouter.post("/uploadVideo", upload.single('videoToBeUploaded'),async(req, res)=>{
+dataRouter.post("/uploadVideo", upload.single('videoToBeUploaded'),async(req : any, res)=>{
     //upload video end point
     //verify first if user is actually a verified user or not
     if(req.user===undefined || !req.user){        
